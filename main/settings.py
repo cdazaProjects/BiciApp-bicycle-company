@@ -128,7 +128,7 @@ AUTHENTICATION_BACKENDS = [
     'main.backend.MyPortalBackend',
 ]
 STATIC_URL = '/static/'
-STATIC_ROOT = "/var/www/example.com/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
