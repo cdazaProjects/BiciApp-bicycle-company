@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 
@@ -6,7 +8,8 @@ class UserApi(object):
 
     def register_user(self, payload):
         self.url += 'api/user/enterprise-user'
-        response = requests.post(self.url, payload)
+        headers = {'Content-Type': 'application/json'}
+        response = requests.post(self.url, data=json.dumps(payload), headers=headers)
         if response.status_code == 200:
             return response.json()
         else:
