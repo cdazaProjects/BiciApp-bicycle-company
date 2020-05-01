@@ -60,6 +60,7 @@ class EmployeeAdmin(ImportExportActionModelAdmin):
                 q.okta_id = registration_data['id']
                 q.save()
 
+
     register_employees.short_description = "register employees"
 
     def queryset(self, request):

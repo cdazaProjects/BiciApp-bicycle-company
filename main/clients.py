@@ -9,6 +9,8 @@ class UserApi(object):
         response = requests.post(self.url, payload)
         if response.status_code == 200:
             return response.json()
+        else:
+            raise Exception
 
 
 class BicycleApi(object):
