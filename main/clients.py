@@ -2,7 +2,7 @@ import requests
 
 
 class UserApi(object):
-    url = 'http://localhost:8002/'
+    url = 'https://ms-spring.herokuapp.com/'
 
     def register_user(self, payload):
         self.url += 'api/user/enterprise-user'

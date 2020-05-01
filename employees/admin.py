@@ -52,7 +52,8 @@ class EmployeeAdmin(ImportExportActionModelAdmin):
                 "Email": q.email,
                 "FirstName": q.first_name,
                 "LastName": q.last_name,
-                "Password": "Pass123."
+                "Password": "Pass123.",
+                "organization": q.company.name
             }
             registration_data = user_api.register_user(payload)
             if registration_data:
