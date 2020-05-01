@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '91qafw7_n$*u8ehq&=s=uj-0unv%fk)5u-3jolu@vlqhq6ax4$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config()}
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -124,7 +128,7 @@ AUTHENTICATION_BACKENDS = [
     'main.backend.MyPortalBackend',
 ]
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'static'))
+STATIC_ROOT = "/var/www/example.com/static/"
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
