@@ -43,7 +43,7 @@ class EmployeeAdmin(ImportExportActionModelAdmin):
     ]
 
     # actions ------------------------------------------------------------------
-    def update_cash(self, request, queryset):
+    def register_employees(self, request, queryset):
         user_api = UserApi()
         for q in queryset:
             if q.okta_id:
@@ -60,7 +60,7 @@ class EmployeeAdmin(ImportExportActionModelAdmin):
                 q.okta_id = registration_data['id']
                 q.save()
 
-    update_cash.short_description = "Update cash with API"
+    register_employees.short_description = "register employees"
 
     def queryset(self, request):
         qs = super(EmployeeAdmin, self).queryset(request)
