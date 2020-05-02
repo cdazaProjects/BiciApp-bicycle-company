@@ -49,10 +49,10 @@ class EmployeeAdmin(ImportExportActionModelAdmin):
             if q.okta_id:
                 continue
             payload = {
-                "Email": q.email,
-                "FirstName": q.first_name,
-                "LastName": q.last_name,
-                "Password": "Pass123.",
+                "email": q.email,
+                "firstName": q.first_name,
+                "lastName": q.last_name,
+                "password": "Pass123.",
                 "organization": q.company.name
             }
             registration_data = user_api.register_user(payload)
