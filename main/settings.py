@@ -144,3 +144,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
+# heroku workaround (codeship)
+if '/app' in os.environ['HOME']:
+    import django_heroku
+    django_heroku.settings(locals())
