@@ -1,6 +1,6 @@
 django-cors-headers==3.2.1
 Django==3.0.5
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 django-import-export==2.0.2
 requests==2.23.0
 dj-database-url
